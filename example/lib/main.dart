@@ -11,9 +11,17 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
 
+  bool _canVibrate = true;
+
   @override
   initState() {
     super.initState();
+    init();
+  }
+
+  init() async{
+    bool canVibrate = await Vibrate.canVibrate;
+    setState((){_canVibrate = canVibrate;});
   }
 
   @override
@@ -26,12 +34,8 @@ class _MyAppState extends State<MyApp> {
             children: <Widget>[
               new ListTile(
                 leading: new Icon(Icons.vibration, color: Colors.teal),
-                onTap:(){Vibrate.vibrate(new Duration(milliseconds: 2000));},
-                title: new Text("Vibrate 2 sec")),
-              new ListTile(
-                leading: new Icon(Icons.cancel, color: Colors.red),
-                onTap: (){Vibrate.cancel();},
-                title: new Text("Cancel")),
+                onTap: _canVibrate ?(){Vibrate.vibrate();} : null,
+                title: new Text("Vibrate")),
             ]),
         ),
       ),

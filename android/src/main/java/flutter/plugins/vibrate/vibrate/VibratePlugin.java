@@ -20,6 +20,7 @@ public class VibratePlugin implements MethodCallHandler {
   }
 
   private Vibrator _vibrator;
+  private final int VIBRATION_DURATION = 500;
 
   public static void registerWith(Registrar registrar) {
     final MethodChannel channel = new MethodChannel(registrar.messenger(), "github.com/clovisnicolas/flutter_vibrate");
@@ -29,18 +30,13 @@ public class VibratePlugin implements MethodCallHandler {
   @Override
   public void onMethodCall(MethodCall call, Result result) {
     if (call.method.equals("vibrate")) {
-      int duration = call.argument("duration");
       if(_vibrator.hasVibrator()){
-        _vibrator.vibrate(duration);
+        _vibrator.vibrate(VIBRATION_DURATION);
       }
       result.success(null);
     }
     else if(call.method.equals("canVibrate")){
       result.success(_vibrator.hasVibrator());
-    }
-    else if(call.method.equals("cancel")){
-      _vibrator.cancel();
-      result.success(null);
     }
     else {
       result.notImplemented();
