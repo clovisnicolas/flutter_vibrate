@@ -1,10 +1,24 @@
-# vibrate
+# Vibrate
+A Flutter plugin to vibrate the device.
 
-A new Flutter plugin.
+## Usage
+To use this plugin, add `vibrate` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
 
-## Getting Started
+Make sure you add the following permissions to your Android Manifest
+```
+<uses-permission android:name="android.permission.VIBRATE" />
+```
 
-For help getting started with Flutter, view our online
-[documentation](http://flutter.io/).
+## Example
+``` dart
+// Import package
+import 'package:vibrate/vibrate.dart';
 
-For help on editing plugin code, view the [documentation](https://flutter.io/platform-plugins/#edit-code).
+// Check if the device can vibrate
+bool canVibrate = await Vibrate.canVibrate;
+
+// Vibrate
+Vibrate.vibrate()
+
+```
+Vibration duration is a constant 500ms because it cannot be set to a specific duration on iOS.

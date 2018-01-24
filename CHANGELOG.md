@@ -1,3 +1,3 @@
-## [0.0.1] - TODO: Add release date.
+## [0.0.1] - January 24th, 2018.
 
-* TODO: Describe initial release.
+* vibrate() and canVibrate() implemented on iOS and Android
