@@ -12,6 +12,11 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
 
   bool _canVibrate = true;
+  final Iterable<Duration> pauses = [
+    const Duration(milliseconds: 500),
+    const Duration(milliseconds: 1000),
+    const Duration(milliseconds: 500),
+  ];
 
   @override
   initState() {
@@ -36,6 +41,10 @@ class _MyAppState extends State<MyApp> {
                 leading: new Icon(Icons.vibration, color: Colors.teal),
                 onTap: _canVibrate ?(){Vibrate.vibrate();} : null,
                 title: new Text("Vibrate")),
+              new ListTile(
+                  leading: new Icon(Icons.vibration, color: Colors.teal),
+                  onTap: _canVibrate ?(){Vibrate.vibrateWithPauses(pauses);} : null,
+                  title: new Text("Vibrate with pauses")),
             ]),
         ),
       ),
