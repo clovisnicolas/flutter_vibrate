@@ -1,4 +1,5 @@
 # Vibrate
+[![pub package](https://img.shields.io/pub/v/vibrate.svg)](https://pub.dartlang.org/packages/vibrate)
 A Flutter plugin to vibrate the device.
 
 ## Usage
