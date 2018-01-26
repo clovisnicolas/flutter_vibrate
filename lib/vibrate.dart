@@ -10,7 +10,11 @@ class Vibrate {
   static Future vibrate() => _channel.invokeMethod('vibrate', {"duration" : _DEFAULT_VIBRATION_DURATION.inMilliseconds});
   //Whether the device can actually vibrate or not
   static Future<bool> get canVibrate => _channel.invokeMethod('canVibrate');
-  //Vibrates with [pauses] in between each vibration
+  /**
+  Vibrates with [pauses] in between each vibration
+  Will always vibrate once before the first pause
+  and once after the last pause
+  **/
   static Future vibrateWithPauses(Iterable<Duration> pauses) async{
     for (Duration d in pauses){
         vibrate();

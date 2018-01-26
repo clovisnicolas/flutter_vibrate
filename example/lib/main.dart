@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:vibrate/vibrate.dart';
 
 void main() => runApp(new MyApp());
@@ -42,7 +41,7 @@ class _MyAppState extends State<MyApp> {
                 onTap: _canVibrate ?(){Vibrate.vibrate();} : null,
                 title: new Text("Vibrate")),
               new ListTile(
-                  leading: new Icon(Icons.vibration, color: Colors.teal),
+                  leading: new Icon(Icons.vibration, color: Colors.blue),
                   onTap: _canVibrate ?(){Vibrate.vibrateWithPauses(pauses);} : null,
                   title: new Text("Vibrate with pauses")),
             ]),

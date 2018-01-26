@@ -19,7 +19,17 @@ import 'package:vibrate/vibrate.dart';
 bool canVibrate = await Vibrate.canVibrate;
 
 // Vibrate
+// Vibration duration is a constant 500ms because 
+// it cannot be set to a specific duration on iOS.
 Vibrate.vibrate()
 
+// Vibrate with pauses between each vibration
+final Iterable<Duration> pauses = [
+    const Duration(milliseconds: 500),
+    const Duration(milliseconds: 1000),
+    const Duration(milliseconds: 500),
+];
+// vibrate - sleep 0.5s - vibrate - sleep 1s - vibrate - sleep 0.5s - vibrate
+Vibrate.vibrate(pauses);
+
 ```
-Vibration duration is a constant 500ms because it cannot be set to a specific duration on iOS.
