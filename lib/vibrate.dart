@@ -25,4 +25,7 @@ class Vibrate {
     }
     vibrate();
   }
+
+  //Cancel vibrations
+  static Future cancel() => _channel.invokeMethod("cancel");
 }

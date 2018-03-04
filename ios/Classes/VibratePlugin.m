@@ -18,6 +18,10 @@
   else if ([@"canVibrate" isEqualToString:call.method]){
     result([NSNumber numberWithBool:YES]);
   }
+  else if ([@"cancel" isEqualToString:call.method]){
+    //TODO add cancel functionality to iOS
+    result(nil);
+  }
   else {
     result(FlutterMethodNotImplemented);
   }
