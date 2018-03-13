@@ -21,7 +21,7 @@ bool canVibrate = await Vibrate.canVibrate;
 // Vibrate
 // Vibration duration is a constant 500ms because 
 // it cannot be set to a specific duration on iOS.
-Vibrate.vibrate()
+Vibrate.vibrate();
 
 // Vibrate with pauses between each vibration
 final Iterable<Duration> pauses = [
