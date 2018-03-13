@@ -28,18 +28,26 @@ public class VibratePlugin implements MethodCallHandler {
 
   @Override
   public void onMethodCall(MethodCall call, Result result) {
-    if (call.method.equals("vibrate")) {
-      if(_vibrator.hasVibrator()){
-        int duration = call.argument("duration");
-        _vibrator.vibrate(duration);
-      }
-      result.success(null);
-    }
-    else if(call.method.equals("canVibrate")){
-      result.success(_vibrator.hasVibrator());
-    }
-    else {
-      result.notImplemented();
+    switch (call.method) {
+      case "vibrate":
+        if (_vibrator.hasVibrator()) {
+          int duration = call.argument("duration");
+          _vibrator.vibrate(duration);
+        }
+        result.success(null);
+        break;
+      case "canVibrate":
+        result.success(_vibrator.hasVibrator());
+        break;
+      case "cancel":
+        if (_vibrator.hasVibrator()) {
+          _vibrator.cancel();
+        }
+        result.success(null);
+        break;
+      default:
+        result.notImplemented();
+        break;
     }
   }
 }
