@@ -11,7 +11,7 @@ class Vibrate {
    * Vibrate for specified duration on Android, and for the default time of 500ms on iOS
    */
   static Future vibrate({Duration duration : _DEFAULT_VIBRATION_DURATION}) {
-    if(Platform.operatingSystem == "ios" && duration != _DEFAULT_VIBRATION_DURATION) {
+    if(Platform.isIOS && duration != _DEFAULT_VIBRATION_DURATION) {
       throw new UnsupportedError("iOS only supports default duration of ${_DEFAULT_VIBRATION_DURATION.inMilliseconds} ms");
     }
     return _channel.invokeMethod('vibrate', {"duration" : duration.inMilliseconds});

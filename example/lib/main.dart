@@ -33,7 +33,7 @@ class _MyAppState extends State<MyApp> {
     bool canVibrate = await Vibrate.canVibrate;
     setState(() {
       _canVibrate = canVibrate;
-      _supportsCustomDuration = Platform.operatingSystem != "ios";
+      _supportsCustomDuration = !Platform.isIOS;
     });
   }
 
