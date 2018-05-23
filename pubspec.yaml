@@ -1,6 +1,6 @@
 name: vibrate
 description: A flutter plugin to vibrate the device
-version: 0.0.2
+version: 0.0.3
 author: Clovis Nicolas <clovisnicolas0@gmail.com>
 homepage: https://github.com/clovisnicolas/flutter_vibrate
 

@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:flutter/services.dart';
 
@@ -6,10 +7,21 @@ class Vibrate {
   static const MethodChannel _channel = const MethodChannel('github.com/clovisnicolas/flutter_vibrate');
   static const Duration _DEFAULT_VIBRATION_DURATION = const Duration(milliseconds: 500);
 
-  //Vibrate for 500ms on Android, and for the default time on iOS (about 500ms as well)
-  static Future vibrate() => _channel.invokeMethod('vibrate', {"duration" : _DEFAULT_VIBRATION_DURATION.inMilliseconds});
-  //Whether the device can actually vibrate or not
-  static Future<bool> get canVibrate => _channel.invokeMethod('canVibrate');
+  /**
+   * Vibrate for specified duration on Android, and for the default time of 500ms on iOS
+   */
+  static Future vibrate({Duration duration : _DEFAULT_VIBRATION_DURATION}) {
+    if(Platform.isIOS && duration != _DEFAULT_VIBRATION_DURATION) {
+      throw new UnsupportedError("iOS only supports default duration of ${_DEFAULT_VIBRATION_DURATION.inMilliseconds} ms");
+    }
+    return _channel.invokeMethod('vibrate', {"duration" : duration.inMilliseconds});
+  }
+
+  /**
+   * Whether the device can actually vibrate or not
+   */
+  static Future<bool> get canVibrate async => await _channel.invokeMethod('canVibrate');
+
   /**
   Vibrates with [pauses] in between each vibration
   Will always vibrate once before the first pause
