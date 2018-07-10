@@ -1,4 +1,5 @@
 # Vibrate
+[![pub package](https://img.shields.io/pub/v/vibrate.svg)](https://pub.dartlang.org/packages/vibrate)
 
 A Flutter plugin to vibrate the device. 
 This uses all the current Haptic Feedback APIs from Apple and provides similar feedback on Android.
@@ -10,12 +11,8 @@ Make sure you add the following permissions to your Android Manifest
 ``` xml
 <uses-permission android:name="android.permission.VIBRATE"/>
 ```
-## Installing
+## Usage
 ``` dart
-vibrate:
-    git:
-      url: git://github.com/appleeducate/flutter_vibrate.git
-      
 // Import package
 import 'package:vibrate/vibrate.dart';
 ```
@@ -53,8 +50,8 @@ enum FeedbackType {
   light
 }
 
-var _type = Feedback.impact;
-Vibrate.feedback_type);
+var _type = FeedbackType.impact;
+Vibrate.feedback(_type);
 ```
 ## Documentation
 #### Android

@@ -1,4 +1,4 @@
-package com.appleeducate.vibrate;
+package flutter.plugins.vibrate;
 
 import android.content.Context;
 import android.os.Build;
