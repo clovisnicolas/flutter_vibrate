@@ -4,19 +4,19 @@ PODS:
     - Flutter
 
 DEPENDENCIES:
-  - Flutter (from `/Users/clovisnicolas/flutter/bin/cache/artifacts/engine/ios`)
-  - vibrate (from `/Users/clovisnicolas/vibrate/ios`)
+  - Flutter (from `.symlinks/flutter/ios`)
+  - vibrate (from `.symlinks/plugins/vibrate/ios`)
 
 EXTERNAL SOURCES:
   Flutter:
-    :path: /Users/clovisnicolas/flutter/bin/cache/artifacts/engine/ios
+    :path: .symlinks/flutter/ios
   vibrate:
-    :path: /Users/clovisnicolas/vibrate/ios
+    :path: .symlinks/plugins/vibrate/ios
 
 SPEC CHECKSUMS:
-  Flutter: d674e78c937094a75ac71dd77e921e840bea3dbf
-  vibrate: 967ba16b8bd87d2fa3646472bb10429f1927c32f
+  Flutter: 9d0fac939486c9aba2809b7982dfdbb47a7b0296
+  vibrate: 8d9cb77859e02b88730c44a9907f561ddca25ca1
 
-PODFILE CHECKSUM: 351e02e34b831289961ec3558a535cbd2c4965d2
+PODFILE CHECKSUM: eebe7f405ca85683d9f060410d4211e286a2556f
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.4.0

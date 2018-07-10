@@ -1,3 +1,7 @@
+## 0.0.3
+
+* Haptic Feedback for iOS and Android. Forked from flutter_vibrate.
+
 ## [0.0.2] - January 26th, 2018.
 
 * added ``vibrateWithPauses(Iterable<Duration> pauses)``
