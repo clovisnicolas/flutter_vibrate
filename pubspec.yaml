@@ -1,7 +1,9 @@
 name: vibrate
 description: A Haptic Feedback plugin.
-version: 0.0.1
-author: Rody Davis <rody.davis.jr@gmail.com>
+version: 0.0.3
+authors:
+  - Clovis Nicolas <clovisnicolas0@gmail.com>
+  - Rhodes Davis Jr. <rody.davis.jr@gmail.com>
 homepage: https://github.com/appleeducate/flutter_vibrate
 
 dependencies:
@@ -14,7 +16,7 @@ dependencies:
 # The following section is specific to Flutter.
 flutter:
   plugin:
-    androidPackage: com.appleeducate.vibrate
+    androidPackage: flutter.plugins.vibrate
     pluginClass: VibratePlugin
 
   # To add assets to your plugin package, add an assets section, like this:
