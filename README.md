@@ -3,15 +3,6 @@
 A Flutter plugin to vibrate the device. 
 This uses all the current Haptic Feedback APIs from Apple and provides similar feedback on Android.
 
-#### Documentation
-Android
-
-https://developer.android.com/reference/android/view/HapticFeedbackConstants
-
-iOS
-
-https://developer.apple.com/design/human-interface-guidelines/ios/user-interaction/feedback/
-
 ## Usage
 To use this plugin, add `vibrate` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
 
@@ -65,3 +56,12 @@ enum FeedbackType {
 var _type = Feedback.impact;
 Vibrate.feedback_type);
 ```
+## Documentation
+#### Android
+
+https://developer.android.com/reference/android/view/HapticFeedbackConstants
+
+#### iOS
+
+https://developer.apple.com/design/human-interface-guidelines/ios/user-interaction/feedback/
+
