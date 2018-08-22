@@ -1,3 +1,7 @@
+## [0.0.4] - August 22nd, 2018
+
+* add compatibility for Dart 2 sdk in pubspec.yaml
+
 ## [0.0.3] - July 10th, 2018
 
 * haptic Feedback for iOS and Android
