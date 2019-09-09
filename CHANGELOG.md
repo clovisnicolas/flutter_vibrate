@@ -1,3 +1,7 @@
+## 0.0.5
+
+* Fix Gradle version in gradle-wrapper.properties
+
 ## 0.0.3
 
 * Haptic Feedback for iOS and Android. Forked from flutter_vibrate.
