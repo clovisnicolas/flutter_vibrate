@@ -38,7 +38,7 @@ class _MyAppState extends State<MyApp> {
       home: new Scaffold(
         appBar: new AppBar(title: new Text('Haptic Feedback Example')),
         body: new Center(
-          child: new Column(children: <Widget>[
+          child: new ListView(children: [
             new ListTile(
               title: new Text("Vibrate"),
               leading: new Icon(Icons.vibration, color: Colors.teal),
