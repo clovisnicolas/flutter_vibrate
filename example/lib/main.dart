@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:vibrate/vibrate.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
   @override
-  _MyAppState createState() => new _MyAppState();
+  _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
@@ -34,100 +34,98 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: new Scaffold(
-        appBar: new AppBar(title: new Text('Haptic Feedback Example')),
-        body: new Center(
-          child: new ListView(children: [
-            new ListTile(
-              title: new Text("Vibrate"),
-              leading: new Icon(Icons.vibration, color: Colors.teal),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text('Haptic Feedback Example')),
+        body: Center(
+          child: ListView(children: [
+            ListTile(
+              title: Text("Vibrate"),
+              leading: Icon(Icons.vibration, color: Colors.teal),
               onTap: !_canVibrate
                   ? null
                   : () {
                       Vibrate.vibrate();
                     },
             ),
-            new ListTile(
-              title: new Text("Vibrate with Pauses"),
-              leading: new Icon(Icons.vibration, color: Colors.brown),
+            ListTile(
+              title: Text("Vibrate with Pauses"),
+              leading: Icon(Icons.vibration, color: Colors.brown),
               onTap: !_canVibrate
                   ? null
                   : () {
                       Vibrate.vibrateWithPauses(pauses);
                     },
             ),
-            new Divider(height: 1.0),
-            new ListTile(
-              title: new Text("Impact"),
-              leading: new Icon(Icons.tap_and_play, color: Colors.orange),
+            Divider(height: 1.0),
+            ListTile(
+              title: Text("Impact"),
+              leading: Icon(Icons.tap_and_play, color: Colors.orange),
               onTap: !_canVibrate
                   ? null
                   : () {
                       Vibrate.feedback(FeedbackType.impact);
                     },
             ),
-            new ListTile(
-              title: new Text("Selection"),
-              leading: new Icon(Icons.select_all, color: Colors.blue),
+            ListTile(
+              title: Text("Selection"),
+              leading: Icon(Icons.select_all, color: Colors.blue),
               onTap: !_canVibrate
                   ? null
                   : () {
                       Vibrate.feedback(FeedbackType.selection);
                     },
             ),
-            new ListTile(
-              title: new Text("Success"),
-              leading: new Icon(Icons.check, color: Colors.green),
+            ListTile(
+              title: Text("Success"),
+              leading: Icon(Icons.check, color: Colors.green),
               onTap: !_canVibrate
                   ? null
                   : () {
                       Vibrate.feedback(FeedbackType.success);
                     },
             ),
-            new ListTile(
-              title: new Text("Warning"),
-              leading: new Icon(Icons.warning, color: Colors.red),
+            ListTile(
+              title: Text("Warning"),
+              leading: Icon(Icons.warning, color: Colors.red),
               onTap: !_canVibrate
                   ? null
                   : () {
                       Vibrate.feedback(FeedbackType.warning);
                     },
             ),
-            new ListTile(
-              title: new Text("Error"),
-              leading: new Icon(Icons.error, color: Colors.red),
+            ListTile(
+              title: Text("Error"),
+              leading: Icon(Icons.error, color: Colors.red),
               onTap: !_canVibrate
                   ? null
                   : () {
                       Vibrate.feedback(FeedbackType.error);
                     },
             ),
-            new Divider(height: 1.0),
-            new ListTile(
-              title: new Text("Heavy"),
-              leading:
-                  new Icon(Icons.notification_important, color: Colors.red),
+            Divider(height: 1.0),
+            ListTile(
+              title: Text("Heavy"),
+              leading: Icon(Icons.notification_important, color: Colors.red),
               onTap: !_canVibrate
                   ? null
                   : () {
                       Vibrate.feedback(FeedbackType.heavy);
                     },
             ),
-            new ListTile(
-              title: new Text("Medium"),
-              leading:
-                  new Icon(Icons.notification_important, color: Colors.green),
+            ListTile(
+              title: Text("Medium"),
+              leading: Icon(Icons.notification_important, color: Colors.green),
               onTap: !_canVibrate
                   ? null
                   : () {
                       Vibrate.feedback(FeedbackType.medium);
                     },
             ),
-            new ListTile(
-              title: new Text("Light"),
-              leading: new Icon(Icons.notification_important,
-                  color: Colors.yellow[700]),
+            ListTile(
+              title: Text("Light"),
+              leading:
+                  Icon(Icons.notification_important, color: Colors.yellow[700]),
               onTap: !_canVibrate
                   ? null
                   : () {
