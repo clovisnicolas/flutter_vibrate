@@ -34,7 +34,7 @@ final Iterable<Duration> pauses = [
     const Duration(milliseconds: 500),
 ];
 // vibrate - sleep 0.5s - vibrate - sleep 1s - vibrate - sleep 0.5s - vibrate
-Vibrate.vibrate(pauses);
+Vibrate.vibrateWithPauses(pauses);
 ```
 ### Haptic Feedback
 ``` dart
