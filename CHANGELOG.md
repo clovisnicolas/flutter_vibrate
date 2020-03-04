@@ -1,3 +1,7 @@
+## 0.0.6
+
+* Changing Name
+
 ## 0.0.5
 
 * Fix Gradle version in gradle-wrapper.properties
