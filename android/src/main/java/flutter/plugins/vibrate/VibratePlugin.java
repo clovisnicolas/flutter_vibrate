@@ -2,6 +2,7 @@ package flutter.plugins.vibrate;
 
 import android.content.Context;
 import android.os.Build;
+import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.view.HapticFeedbackConstants;
 
@@ -28,11 +29,16 @@ public class VibratePlugin implements MethodCallHandler {
   }
 
   @Override
+  @SuppressWarnings("deprecation")
   public void onMethodCall(MethodCall call, Result result) {
     if (call.method.equals("vibrate")) {
       if(_vibrator.hasVibrator()){
         int duration = call.argument("duration");
-        _vibrator.vibrate(duration);
+        if (Build.VERSION.SDK_INT >= 26) {
+            _vibrator.vibrate(VibrationEffect.createOneShot(duration, VibrationEffect.DEFAULT_AMPLITUDE));
+        } else {
+            _vibrator.vibrate(duration);
+        }
       }
       result.success(null);
     }
@@ -41,55 +47,87 @@ public class VibratePlugin implements MethodCallHandler {
     } //Feedback
     else if(call.method.equals("impact")){
       if(_vibrator.hasVibrator()){
-        _vibrator.vibrate(HapticFeedbackConstants.VIRTUAL_KEY);
+        if (Build.VERSION.SDK_INT >= 26) {
+            _vibrator.vibrate(VibrationEffect.createOneShot(HapticFeedbackConstants.VIRTUAL_KEY, VibrationEffect.DEFAULT_AMPLITUDE));
+        } else {
+            _vibrator.vibrate(HapticFeedbackConstants.VIRTUAL_KEY);
+        }
       }
       result.success(null);
     }
     else if(call.method.equals("selection")){
       if(_vibrator.hasVibrator()){
-        _vibrator.vibrate(HapticFeedbackConstants.KEYBOARD_TAP);
+        if (Build.VERSION.SDK_INT >= 26) {
+           _vibrator.vibrate(VibrationEffect.createOneShot(HapticFeedbackConstants.KEYBOARD_TAP, VibrationEffect.DEFAULT_AMPLITUDE));
+        } else {
+            _vibrator.vibrate(HapticFeedbackConstants.KEYBOARD_TAP);
+        }
       }
       result.success(null);
     }
     else if(call.method.equals("success")){
       if(_vibrator.hasVibrator()){
           int duration = 50;
-          _vibrator.vibrate(duration);
+          if (Build.VERSION.SDK_INT >= 26) {
+              _vibrator.vibrate(VibrationEffect.createOneShot(duration, VibrationEffect.DEFAULT_AMPLITUDE));
+          } else {
+              _vibrator.vibrate(duration);
+          }
       }
       result.success(null);
     }
     else if(call.method.equals("warning")){
       if(_vibrator.hasVibrator()){
           int duration = 250;
-          _vibrator.vibrate(duration);
+          if (Build.VERSION.SDK_INT >= 26) {
+              _vibrator.vibrate(VibrationEffect.createOneShot(duration, VibrationEffect.DEFAULT_AMPLITUDE));
+          } else {
+              _vibrator.vibrate(duration);
+          }
       }
       result.success(null);
     }
     else if(call.method.equals("error")){
       if(_vibrator.hasVibrator()){
           int duration = 500;
-          _vibrator.vibrate(duration);
+          if (Build.VERSION.SDK_INT >= 26) {
+              _vibrator.vibrate(VibrationEffect.createOneShot(duration, VibrationEffect.DEFAULT_AMPLITUDE));
+          } else {
+              _vibrator.vibrate(duration);
+          }
       }
       result.success(null);
     }
     else if(call.method.equals("heavy")){
       if(_vibrator.hasVibrator()){
           int duration = 100;
-          _vibrator.vibrate(duration);
+          if (Build.VERSION.SDK_INT >= 26) {
+              _vibrator.vibrate(VibrationEffect.createOneShot(duration, VibrationEffect.DEFAULT_AMPLITUDE));
+          } else {
+              _vibrator.vibrate(duration);
+          }
       }
       result.success(null);
     }
     else if(call.method.equals("medium")){
       if(_vibrator.hasVibrator()){
           int duration = 40;
-          _vibrator.vibrate(duration);
+          if (Build.VERSION.SDK_INT >= 26) {
+              _vibrator.vibrate(VibrationEffect.createOneShot(duration, VibrationEffect.DEFAULT_AMPLITUDE));
+          } else {
+              _vibrator.vibrate(duration);
+          }
       }
       result.success(null);
     }
     else if(call.method.equals("light")){
       if(_vibrator.hasVibrator()){
           int duration = 10;
-          _vibrator.vibrate(duration);
+          if (Build.VERSION.SDK_INT >= 26) {
+              _vibrator.vibrate(VibrationEffect.createOneShot(duration, VibrationEffect.DEFAULT_AMPLITUDE));
+          } else {
+              _vibrator.vibrate(duration);
+          }
       }
       result.success(null);
     }
