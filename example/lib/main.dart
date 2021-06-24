@@ -17,18 +17,18 @@ class _MyAppState extends State<MyApp> {
   ];
 
   @override
-  initState() {
+  void initState() {
     super.initState();
-    init();
+    _init();
   }
 
-  init() async {
+  Future<void> _init() async {
     bool canVibrate = await Vibrate.canVibrate;
     setState(() {
       _canVibrate = canVibrate;
       _canVibrate
-          ? print("This device can vibrate")
-          : print("This device cannot vibrate");
+          ? debugPrint('This device can vibrate')
+          : debugPrint('This device cannot vibrate');
     });
   }
 
@@ -36,31 +36,27 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: Text('Haptic Feedback Example')),
+        appBar: AppBar(title: const Text('Haptic Feedback Example')),
         body: Center(
           child: ListView(children: [
             ListTile(
-              title: Text("Vibrate"),
-              leading: Icon(Icons.vibration, color: Colors.teal),
-              onTap: !_canVibrate
-                  ? null
-                  : () {
-                      Vibrate.vibrate();
-                    },
+              title: const Text('Vibrate'),
+              leading: const Icon(Icons.vibration, color: Colors.teal),
+              onTap: !_canVibrate ? null : Vibrate.vibrate,
             ),
             ListTile(
-              title: Text("Vibrate with Pauses"),
-              leading: Icon(Icons.vibration, color: Colors.brown),
+              title: const Text('Vibrate with Pauses'),
+              leading: const Icon(Icons.vibration, color: Colors.brown),
               onTap: !_canVibrate
                   ? null
                   : () {
                       Vibrate.vibrateWithPauses(pauses);
                     },
             ),
-            Divider(height: 1.0),
+            const Divider(height: 1),
             ListTile(
-              title: Text("Impact"),
-              leading: Icon(Icons.tap_and_play, color: Colors.orange),
+              title: const Text('Impact'),
+              leading: const Icon(Icons.tap_and_play, color: Colors.orange),
               onTap: !_canVibrate
                   ? null
                   : () {
@@ -68,8 +64,8 @@ class _MyAppState extends State<MyApp> {
                     },
             ),
             ListTile(
-              title: Text("Selection"),
-              leading: Icon(Icons.select_all, color: Colors.blue),
+              title: const Text('Selection'),
+              leading: const Icon(Icons.select_all, color: Colors.blue),
               onTap: !_canVibrate
                   ? null
                   : () {
@@ -77,8 +73,8 @@ class _MyAppState extends State<MyApp> {
                     },
             ),
             ListTile(
-              title: Text("Success"),
-              leading: Icon(Icons.check, color: Colors.green),
+              title: const Text('Success'),
+              leading: const Icon(Icons.check, color: Colors.green),
               onTap: !_canVibrate
                   ? null
                   : () {
@@ -86,8 +82,8 @@ class _MyAppState extends State<MyApp> {
                     },
             ),
             ListTile(
-              title: Text("Warning"),
-              leading: Icon(Icons.warning, color: Colors.red),
+              title: const Text('Warning'),
+              leading: const Icon(Icons.warning, color: Colors.red),
               onTap: !_canVibrate
                   ? null
                   : () {
@@ -95,18 +91,19 @@ class _MyAppState extends State<MyApp> {
                     },
             ),
             ListTile(
-              title: Text("Error"),
-              leading: Icon(Icons.error, color: Colors.red),
+              title: const Text('Error'),
+              leading: const Icon(Icons.error, color: Colors.red),
               onTap: !_canVibrate
                   ? null
                   : () {
                       Vibrate.feedback(FeedbackType.error);
                     },
             ),
-            Divider(height: 1.0),
+            const Divider(height: 1),
             ListTile(
-              title: Text("Heavy"),
-              leading: Icon(Icons.notification_important, color: Colors.red),
+              title: const Text('Heavy'),
+              leading:
+                  const Icon(Icons.notification_important, color: Colors.red),
               onTap: !_canVibrate
                   ? null
                   : () {
@@ -114,8 +111,9 @@ class _MyAppState extends State<MyApp> {
                     },
             ),
             ListTile(
-              title: Text("Medium"),
-              leading: Icon(Icons.notification_important, color: Colors.green),
+              title: const Text('Medium'),
+              leading:
+                  const Icon(Icons.notification_important, color: Colors.green),
               onTap: !_canVibrate
                   ? null
                   : () {
@@ -123,7 +121,7 @@ class _MyAppState extends State<MyApp> {
                     },
             ),
             ListTile(
-              title: Text("Light"),
+              title: const Text('Light'),
               leading:
                   Icon(Icons.notification_important, color: Colors.yellow[700]),
               onTap: !_canVibrate
