@@ -14,13 +14,13 @@ enum FeedbackType {
 }
 
 class Vibrate {
-  static const MethodChannel _channel = const MethodChannel('vibrate');
+  static const MethodChannel _channel = MethodChannel('vibrate');
   static const Duration _DEFAULT_VIBRATION_DURATION =
-      const Duration(milliseconds: 500);
+      Duration(milliseconds: 500);
 
   /// Vibrate for 500ms on Android, and for the default time on iOS (about 500ms as well)
   static Future vibrate() => _channel.invokeMethod(
-      'vibrate', {"duration": _DEFAULT_VIBRATION_DURATION.inMilliseconds});
+      'vibrate', {'duration': _DEFAULT_VIBRATION_DURATION.inMilliseconds});
 
   /// Whether the device can actually vibrate or not
   static Future<bool> get canVibrate async {
@@ -63,13 +63,13 @@ class Vibrate {
   /// and once after the last pause
 
   static Future vibrateWithPauses(Iterable<Duration> pauses) async {
-    for (Duration d in pauses) {
-      vibrate();
+    for (final Duration d in pauses) {
+      await vibrate();
       //Because the native vibration is not awaited, we need to wait for
       //the vibration to end before launching another one
-      await new Future.delayed(_DEFAULT_VIBRATION_DURATION);
-      await new Future.delayed(d);
+      await Future.delayed(_DEFAULT_VIBRATION_DURATION);
+      await Future.delayed(d);
     }
-    vibrate();
+    await vibrate();
   }
 }

@@ -1,3 +1,7 @@
+## 1.1.0
+
+* Merging changes and fixing lint errors
+
 ## 1.0.0
 
 * Changing Name
