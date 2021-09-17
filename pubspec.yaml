@@ -3,10 +3,6 @@ description: A Haptic Feedback plugin.
 version: 1.2.0
 environment:
   sdk: '>=2.12.0 <3.0.0'
-authors:
-  - Clovis Nicolas <clovisnicolas0@gmail.com>
-  - Rhodes Davis Jr. <rody.davis.jr@gmail.com>
-  - GiKode <827266641@qq.com>
 maintainer: Rody Davis (@rodydavis)
 homepage: https://github.com/rodydavis/plugins
 repository: https://github.com/rodydavis/flutter_vibrate
