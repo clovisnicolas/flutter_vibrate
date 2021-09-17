@@ -21,6 +21,7 @@ class VibrateMethodCallHandler implements MethodChannel.MethodCallHandler {
         this_legacyVibrator = Build.VERSION.SDK_INT < 26;
     }
 
+    @SuppressWarnings("deprecation")
     private void vibrate(int duration) {
         if (hasVibrator) {
             if (legacyVibrator) {
