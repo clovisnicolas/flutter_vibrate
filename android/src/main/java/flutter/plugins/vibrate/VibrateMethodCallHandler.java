@@ -6,6 +6,7 @@ import android.os.VibrationEffect;
 import android.view.HapticFeedbackConstants;
 
 import io.flutter.plugin.common.MethodCall;
+import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
 
@@ -16,9 +17,9 @@ class VibrateMethodCallHandler implements MethodChannel.MethodCallHandler {
 
     VibrateMethodCallHandler(Vibrator vibrator) {
         assert (vibrator != null);
-        this._vibrator = vibrator;
-        this._hasVibrator = _vibrator.hasVibrator();
-        this_legacyVibrator = Build.VERSION.SDK_INT < 26;
+        this.vibrator = vibrator;
+        this.hasVibrator = vibrator.hasVibrator();
+        this.legacyVibrator = Build.VERSION.SDK_INT < 26;
     }
 
     @SuppressWarnings("deprecation")
@@ -27,7 +28,7 @@ class VibrateMethodCallHandler implements MethodChannel.MethodCallHandler {
             if (legacyVibrator) {
                 vibrator.vibrate(duration);
             } else {
-                vibrator.vibrate(VibrationEffect.createOneShot(milliseconds, VibrationEffect.DEFAULT_AMPLITUDE));
+                vibrator.vibrate(VibrationEffect.createOneShot(duration, VibrationEffect.DEFAULT_AMPLITUDE));
             }
         }
     }
@@ -36,7 +37,7 @@ class VibrateMethodCallHandler implements MethodChannel.MethodCallHandler {
     public void onMethodCall(MethodCall call, MethodChannel.Result result) {
         switch (call.method) {
             case "canVibrate":
-                result.success(_hasVibrator);
+                result.success(hasVibrator);
                 break;
             case "vibrate":
                 final int duration = call.argument("duration");
