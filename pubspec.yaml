@@ -2,8 +2,7 @@ name: flutter_vibrate
 description: A Haptic Feedback plugin.
 version: 1.1.0
 environment:
-  sdk: '>=2.12.0-259.8.beta <3.0.0'
-  flutter: ^1.10.0
+  sdk: '>=2.12.0 <3.0.0'
 authors:
   - Clovis Nicolas <clovisnicolas0@gmail.com>
   - Rhodes Davis Jr. <rody.davis.jr@gmail.com>
