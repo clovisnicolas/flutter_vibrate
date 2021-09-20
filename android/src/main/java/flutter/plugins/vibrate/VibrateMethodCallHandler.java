@@ -7,8 +7,6 @@ import android.view.HapticFeedbackConstants;
 
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
-import io.flutter.plugin.common.MethodChannel.Result;
-import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 
 class VibrateMethodCallHandler implements MethodChannel.MethodCallHandler {
     private final Vibrator vibrator;
