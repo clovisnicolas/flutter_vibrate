@@ -1,3 +1,7 @@
+## 1.2.0
+
+* Upgrade to Android v2 embedding
+
 ## 1.1.0
 
 * Merging changes and fixing lint errors
