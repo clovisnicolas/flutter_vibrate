@@ -1,3 +1,7 @@
+## 1.3.0
+
+* Fixing swift version
+
 ## 1.2.0
 
 * Upgrade to Android v2 embedding
