@@ -1,5 +1,5 @@
 #import "VibratePlugin.h"
-#import <vibrate/vibrate-Swift.h>
+#import <flutter_vibrate/flutter_vibrate-Swift.h>
 
 @implementation VibratePlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {

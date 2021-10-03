@@ -1,11 +1,15 @@
+[![Buy Me A Coffee](https://img.shields.io/badge/Donate-Buy%20Me%20A%20Coffee-yellow.svg)](https://www.buymeacoffee.com/rodydavis)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WSH3GVC49GNNJ)
+![github pages](https://github.com/rodydavis/flutter_vibrate/workflows/github%20pages/badge.svg)
+[![GitHub stars](https://img.shields.io/github/stars/rodydavis/flutter_vibrate?color=blue)](https://github.com/rodydavis/flutter_vibrate)
+[![flutter_vibrate](https://img.shields.io/pub/v/flutter_vibrate.svg)](https://pub.dev/packages/flutter_vibrate)
+
 # Vibrate
-[![pub package](https://img.shields.io/pub/v/vibrate.svg)](https://pub.dartlang.org/packages/vibrate)
 
 A Flutter plugin to vibrate the device. 
 This uses all the current Haptic Feedback APIs from Apple and provides similar feedback on Android.
 
-## Usage
-To use this plugin, add `vibrate` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
+## Getting Started
 
 Make sure you add the following permissions to your Android Manifest
 ``` xml
@@ -14,7 +18,7 @@ Make sure you add the following permissions to your Android Manifest
 ## Usage
 ``` dart
 // Import package
-import 'package:vibrate/vibrate.dart';
+import 'package:flutter_vibrate/flutter_vibrate.dart';
 ```
 
 ### Vibration
